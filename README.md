@@ -13,6 +13,8 @@ Install `requirements-live.txt` in a virtual environment. Use an explicit AWS CL
 
 Read scope is one region, plus the account’s global IAM settings and customer-managed policy default versions. API denial is incomplete coverage. Individual S3 properties that cannot be obtained stay absent and score unknown. A collected empty inventory scores not applicable. No cloud configuration is applied by this tool.
 
+Run the tests after installing the collector dependencies to exercise the SDK request contract with Botocore Stubber. These tests cover mismatched account IDs, denied EC2 collection and partial S3 responses without contacting AWS. Substitute the account ID and bucket pattern in the example IAM policy before attaching it in your lab.
+
 ## Remediation case study
 
 The fictional baseline contains 15 observed failures. The second fixture removes all 15. Compare each resource with an identical account/region scope and a stable resource ID. Replacing or omitting a resource does not prove remediation. For real assessments, record the approved change and repeat the same collection. Use private subnets or configuration fixtures when demonstrating network checks.
