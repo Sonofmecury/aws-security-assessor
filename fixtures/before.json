@@ -1,0 +1,69 @@
+{
+  "scope": {
+    "account": "000000000000",
+    "region": "us-east-1"
+  },
+  "account": [
+    {
+      "id": "000000000000",
+      "AccountMFAEnabled": 0,
+      "AccountAccessKeysPresent": 1
+    }
+  ],
+  "iam_policies": [
+    {
+      "id": "fictional-policy",
+      "PolicyDocument": {
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": "*",
+            "Resource": "*"
+          }
+        ]
+      }
+    }
+  ],
+  "buckets": [
+    {
+      "id": "fictional-lab",
+      "IsPublic": true,
+      "Versioning": "Off",
+      "BlockPublicAcls": false,
+      "IgnorePublicAcls": false,
+      "BlockPublicPolicy": false,
+      "RestrictPublicBuckets": false
+    }
+  ],
+  "groups": [
+    {
+      "id": "sg-fixture",
+      "IpPermissions": [
+        {
+          "IpProtocol": "-1",
+          "Ipv6Ranges": [
+            {
+              "CidrIpv6": "::/0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "instances": [
+    {
+      "id": "i-fixture",
+      "MetadataOptions": {
+        "HttpEndpoint": "enabled",
+        "HttpTokens": "optional"
+      },
+      "PublicIpAddress": "192.0.2.4"
+    }
+  ],
+  "volumes": [
+    {
+      "id": "vol-fixture",
+      "Encrypted": false
+    }
+  ]
+}

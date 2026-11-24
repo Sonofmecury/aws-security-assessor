@@ -1,0 +1,68 @@
+{
+  "scope": {
+    "account": "000000000000",
+    "region": "us-east-1"
+  },
+  "account": [
+    {
+      "id": "000000000000",
+      "AccountMFAEnabled": 1,
+      "AccountAccessKeysPresent": 0
+    }
+  ],
+  "iam_policies": [
+    {
+      "id": "fictional-policy",
+      "PolicyDocument": {
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::fictional-lab/reports/*"
+          }
+        ]
+      }
+    }
+  ],
+  "buckets": [
+    {
+      "id": "fictional-lab",
+      "IsPublic": false,
+      "Versioning": "Enabled",
+      "BlockPublicAcls": true,
+      "IgnorePublicAcls": true,
+      "BlockPublicPolicy": true,
+      "RestrictPublicBuckets": true
+    }
+  ],
+  "groups": [
+    {
+      "id": "sg-fixture",
+      "IpPermissions": [
+        {
+          "IpProtocol": "-1",
+          "Ipv6Ranges": [
+            {
+              "CidrIpv6": "fd00::/64"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "instances": [
+    {
+      "id": "i-fixture",
+      "MetadataOptions": {
+        "HttpEndpoint": "enabled",
+        "HttpTokens": "required"
+      }
+    }
+  ],
+  "volumes": [
+    {
+      "id": "vol-fixture",
+      "Encrypted": true
+    }
+  ]
+}
